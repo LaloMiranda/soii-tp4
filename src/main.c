@@ -24,6 +24,13 @@ int main()
 
     imprimirDatos(imagenFull);
     imprimirDatos(pedazoBuscar);
+    printf("\n");
+
+    //imprimirData(imagenFull);
+    //imprimirData(pedazoBuscar);
+
+    printf("Buscando imagen\n");
+    buscarPedazo(imagenFull, pedazoBuscar);
 
     free(imagenFull);
     free(pedazoBuscar);
