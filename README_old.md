@@ -51,38 +51,13 @@ El diseño debe ser dinámico, y debe adaptarse a distintas imagenes de distinto
 - El código no debe contener errores, ni warnings.
 - El código no debe contener errores de cppcheck.
 
-### Ejecución del programa
-Para ejecutar el programa debemos correr **make** y luego el binario con el siguiente formato:
+## Entrega
+Como metodología para resolver este problema, se solicita que, primero, se realice un diseño que sea solución al problema sin explotar el paralelismo (procedural). Luego, a partir de este, realizar una nueva implementación que realice el proceso mediante el uso de la librería OpenMP, explotando el paralelismo del problema. Para ello, se requiere reconocer qué tipo de paralelismo exhibe el problema en cuestión y luego, diseñar la solución del mismo determinando cuáles son los datos/operaciones paralelizables. Se tendrá en cuenta, el nivel de paralelismo alcanzado.
 
-```shell
-./bin/main.out [Number of cores]
-```
+La entrega se hace a travéz del repositorio de GitHub y se deberá demostrar la realizacion del mismo mediante un correcto uso. El repositorio deberá proveer los archivos fuente y cualquier otro archivo asociados a la compilación, archivos  de  proyecto  ”Makefile”  y  el  código correctamente documentado. No debe contener ningún archivo asociado a proyectos de un IDE y se debe asumir que el proyecto podrá ser compilado y corrido por una `tty` en una distribución de Linux con las herramientas típicas de desarrollo. También se deberá entregar un informe (que pude ser en MD en el repo) explicando paso a paso el desarrllo, inluyendo graficos del diseño solución propuesto, justificando en todo momento lo implementrado.
+También se deberá investigar acerca de qué utilidades de profiling gratuitas existen y que brinda cada una (un capítulo del informe), optando por una para realizar las mediciones de tiempo de ejecución de la aplicación diseñada.
 
-Si corremos el binario con el número 1 como argumento este correra de forma similar a una ejecución serial.
-
-### Performance
-Probando con diferentes armgumentos para la cantidad de hilos se obtuvo el siguiente gráfico:
-
-![performance](.docimg/performance_per_thread.png)
-
-Se puede ver como el tiempo de ejecución se va reduciendo gradualmente en función de la catidad de hilos que se eligen para correr.
-Tiempos promedio corriendo 10 veces con cada configuración:
-
-| 1 hilo | 2 hilos | 4 hilos | 8 hilos |
-|--------|---------|---------|---------|
-| 0.088  | 0.077   | 0.072   | 0.068   |
-
-
-Análisis la reducción del tiempo de ejecución:
-- 1 hilo  -> 2 hilos: 12.5%
-- 2 hilos -> 4 hilos: 6.5%
-- 4 hilos -> 8 hilos: 5.5%
-
-## Dependencias
-Las dependencias necesarias son:
-- make
-- binutils
-- build-essential
+El informe (markdown) debe contener gráficos y análisis de comparación entre la ejecución procedural y la distribuida, mostrando la escalabilidad y el speedup del mismo. El informe además debe contener el diseño de la solución y la comparativa de profilers.
 
 ## Links
 - [Introduction to parallel programming](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial)
