@@ -26,6 +26,6 @@ int **alloc_matrix(int heigth, int width);
 void imprimirDatos(dataPGM *pgmStruct);
 void imprimirData(dataPGM *pgmStruct);
 
-void buscarPedazo(dataPGM *imgFull, dataPGM *pedazo);
+void buscarPedazo(dataPGM *imgFull, dataPGM *pedazo, int num_threads);
 bool checkRest(dataPGM *imgFull, dataPGM *pedazo, int x, int y);
 #endif

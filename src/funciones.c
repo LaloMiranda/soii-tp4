@@ -103,11 +103,11 @@ int **alloc_matrix(int heigth, int width) /* Allocate the array y seteo todo cer
     return array;
 }
 
-void buscarPedazo(dataPGM *imgFull, dataPGM *pedazo){
+void buscarPedazo(dataPGM *imgFull, dataPGM *pedazo, int num_threads){
     int boundHeight = imgFull->height - pedazo->height + 1;
     int boundWidth  = imgFull->width - pedazo->width + 1; 
     // int matches = 0;
-    #pragma omp parallel num_threads(atoi(getenv("threads")))
+    #pragma omp parallel num_threads(num_threads)
     {
     //Recorro la matriz full size
     #pragma omp for
