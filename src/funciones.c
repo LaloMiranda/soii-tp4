@@ -110,21 +110,21 @@ void buscarPedazo(dataPGM *imgFull, dataPGM *pedazo, int num_threads){
     #pragma omp parallel num_threads(num_threads)
     {
     //Recorro la matriz full size
-    #pragma omp for
-    for (int i = 1; i < boundHeight; i++){
-        for (int j = 1; j < boundWidth; j++){
-            if(imgFull->data[i][j] == pedazo->data[0][0]){
-                //printf("Punta en (%i, %i)\n", i, j);
-                if(checkRest(imgFull, pedazo, i, j)){
-                    printf("Encontre la matriz en: %i:%i\n", j + pedazo->width/2, i + pedazo->height/2);
-                    //return;
+        #pragma omp for
+        for (int i = 1; i < boundHeight; i++){
+            for (int j = 1; j < boundWidth; j++){
+                if(imgFull->data[i][j] == pedazo->data[0][0]){
+                    //printf("Punta en (%i, %i)\n", i, j);
+                    if(checkRest(imgFull, pedazo, i, j)){
+                        printf("Encontre la matriz en: %i:%i\n", j + pedazo->width/2, i + pedazo->height/2);
+                        //return;
+                    }
+                    // else{
+                    //     printf("No match\n");
+                    // }
                 }
-                // else{
-                //     printf("No match\n");
-                // }
             }
         }
-    }
     }
     
 }
