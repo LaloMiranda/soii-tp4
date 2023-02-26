@@ -8,6 +8,8 @@
 #include <string.h>
 #include <ctype.h>
 
+#include <omp.h>
+
 typedef struct dataPGM{
     char filePath[50];
     char type[3];

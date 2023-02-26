@@ -1,3 +1,5 @@
 # No pushear archivos compilados y de texto
 *.out
 *.txt
+
+./obj/*.obj
