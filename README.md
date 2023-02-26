@@ -41,16 +41,6 @@ Las imágenes deben tratarse cono matrices em R<sub>2</sub> monocromática y es 
 El diseño debe contemplar toda situación no descripta en el presente documento y se debe hacer un correcto manejo de errores.
 El diseño debe ser dinámico, y debe adaptarse a distintas imagenes de distintos tamañaos.
 
-### Criterios de Corrección
-- Se debe compilar el código con los flags de compilación: 
-     -Wall -Pedantic -Werror -Wextra -Wconversion -std=gnu11
-- La correcta gestion de memoria.
-- Dividir el código en módulos de manera juiciosa.
-- Estilo de código.
-- Manejo de errores
-- El código no debe contener errores, ni warnings.
-- El código no debe contener errores de cppcheck.
-
 ### Ejecución del programa
 Para ejecutar el programa debemos correr **make** y luego el binario con el siguiente formato:
 
